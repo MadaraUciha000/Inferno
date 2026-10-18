@@ -20,6 +20,12 @@ development environment:
 gradle build
 ```
 
+The GitHub Actions workflow builds the Cloudstream package and publishes the
+package plus `plugins.json` to the `builds` branch on pushes to `main`. In the
+repository settings, allow GitHub Actions to write repository contents for the
+deployment step. Replace the fallback repository name in `build.gradle.kts`
+when building outside GitHub Actions.
+
 The extension provides TMDB metadata only; it does not resolve or play video
 streams. This product uses the TMDB API but is not endorsed or certified by
 TMDB.

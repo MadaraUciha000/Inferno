@@ -30,6 +30,9 @@ apply(plugin = "com.lagradost.cloudstream3.gradle")
 version = 1
 
 configure<CloudstreamExtension> {
+    val repository = System.getenv("GITHUB_REPOSITORY")
+        ?: "your-name/indian-cinema-tmdb"
+    setRepo("https://github.com/$repository")
     language = "en"
     description = "Popular Telugu, Tamil, Hindi, and Malayalam cinema from TMDB."
     authors = listOf("Indian Cinema TMDB")
